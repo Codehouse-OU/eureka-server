@@ -1,0 +1,12 @@
+pluginManagement {
+    apply from: 'dependencies.gradle'
+    repositories {
+        gradlePluginPortal()
+    }
+    plugins {
+        id 'org.springframework.boot' version "${springBootVersion}"
+        id 'io.spring.dependency-management' version "${dependencyManagementVersion}"
+    }
+}
+
+rootProject.name = 'eureka'

@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  config-server:
+    image: codehouseou/eureka-server:latest
+    ports:
+      - 8761:8761
+    environment:
+      # Configure basic auth for the server.
+      - SPRING_PROFILES_ACTIVE=basicAuth
+      # Protect the endpoints with username and password.
+      - SPRING_SECURITY_USER_NAME=eureka
+      - SPRING_SECURITY_USER_PASSWORD=5eVutmFK3EeGvYoxkKTQEYxNi

@@ -1,0 +1,56 @@
+buildscript {
+	apply from: 'dependencies.gradle'
+	repositories {
+		gradlePluginPortal()
+	}
+	dependencies {
+	}
+}
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot'
+	id 'io.spring.dependency-management'
+}
+
+group = 'ee.codehouse'
+version = '1.0.0'
+description = 'Spring Cloud Eureka Server'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+	implementation "org.springframework.ldap:spring-ldap-core"
+	implementation "org.springframework.security:spring-security-ldap"
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+tasks.named('bootBuildImage') {
+	builder = 'paketobuildpacks/builder-jammy-base:latest'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+// Disable the default JAR task
+jar.enabled = false
+
+// Configure the bootJar task
+bootJar {
+	archiveClassifier = ''
+}

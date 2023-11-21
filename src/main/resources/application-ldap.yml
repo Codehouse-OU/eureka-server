@@ -1,0 +1,9 @@
+ldap:
+  url: ldap://server/DC=a,DC=b
+  username: ldapuser
+  password: ldappassword
+  userSearchBase: OU=Org
+  userSearchFilter: (sAMAccountName={0})
+  groupSearchBase: OU=Administrative Roles,OU=Role Groups,OU=Management,OU=Org
+  groupSearchFilter: (member={0})
+  allowedRole: ROLE_Role - API GW - eureka
