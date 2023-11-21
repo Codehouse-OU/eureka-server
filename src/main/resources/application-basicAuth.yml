@@ -1,4 +1,5 @@
 spring:
   security:
     user:
-      password: eurekapassword
+      name: eureka
+      password: 5eVutmFK3EeGvYoxkKTQEYxNi

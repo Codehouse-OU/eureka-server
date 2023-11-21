@@ -8,18 +8,18 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
 @WithMockUser
 class AuthenticatedUserIntegrationTest {
-	@Autowired
-	private MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
-	@Test
-	void shouldSeeLastNRegistrations() throws Exception {
-		mockMvc.perform(get("/lastn"))
-				.andExpect(status().isOk());
-	}
+    @Test
+    void shouldSeeLastNRegistrations() throws Exception {
+        mockMvc.perform(get("/lastn"))
+                .andExpect(status().isOk());
+    }
 }

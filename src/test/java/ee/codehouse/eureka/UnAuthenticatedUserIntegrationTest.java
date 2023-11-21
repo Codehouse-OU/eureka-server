@@ -13,13 +13,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 class UnAuthenticatedUserIntegrationTest {
 
-	@Autowired
-	private MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
-	@Test
-	void shouldNotSeeLastNRegistrations() throws Exception {
-		mockMvc.perform(get("/lastn"))
-				.andExpect(status().isUnauthorized());
-	}
+    @Test
+    void shouldNotSeeLastNRegistrations() throws Exception {
+        mockMvc.perform(get("/lastn"))
+                .andExpect(status().isUnauthorized());
+    }
 
 }

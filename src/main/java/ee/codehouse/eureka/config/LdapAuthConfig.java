@@ -52,7 +52,6 @@ public class LdapAuthConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authz -> authz.anyRequest().hasAuthority(allowedRole.toUpperCase())) // Requests require authentication and correct role
-//                .authorizeHttpRequests(authz -> authz.anyRequest().authenticated()) // Requests require authentication and correct role
                 .csrf(AbstractHttpConfigurer::disable) // Disable CSRF
                 .httpBasic(Customizer.withDefaults()); // Use Basic authentication
 
