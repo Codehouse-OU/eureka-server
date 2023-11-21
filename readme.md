@@ -1,20 +1,5 @@
 # Spring Cloud Eureka Wrapper
 
-## Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [FAQs](#faqs)
-
 ## About
 
 This project serves as a wrapper
@@ -38,8 +23,8 @@ secure to integrate into your microservices architecture.
 To install the Spring Cloud Eureka Wrapper, clone the repository and build the project using Gradle:
 
 ```shell
-git clone [repository-url]
-cd [repository-name]
+git clone https://github.com/Codehouse-OU/eureka-server.git
+cd eureka-server
 ./gradlew build
 ```
 
@@ -116,7 +101,7 @@ curl http://eureka:5eVutmFK3EeGvYoxkKTQEYxNi@localhost:8761/eureka/v2/apps -H 'a
 
 ## Troubleshooting
 
-[Include common issues and troubleshooting steps]
+* When getting 401 error, check that the profile is set correctly. And the configuration is correct.
 
 ## Contributing
 
